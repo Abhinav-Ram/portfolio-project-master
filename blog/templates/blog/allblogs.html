@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<main role="main">
+<section class="jumbotron text-center">
+    <div class="container">
+      <h1>I'm Abhinav, and this is my blog</h1>
+      <hr style = "border-top: 1px dashed black">
+      <p style="color:black;font-size:23px;font-family:verdana;">Check out my latest posts!</p>
+   </div>
+  </section>
+ {% for newblog in blogs.all %}
+      <div class="col-md-6">
+      <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+         <div class="col p-4 d-flex flex-column position-static">
+          <h3 class="mb-1"><a href = "{% url 'detail' newblog.id %}">{{ newblog.title }}</a></h3>
+          <div class="mb-4 text-muted">{{ newblog.format_date }}</div>
+            <p class="card-text mb-auto">{{ newblog.summary }}</p>
+          </div>
+          <div class="col-auto d-none d-lg-block">
+             <img src = "{{ newblog.image.url }}" height = "250" width = "200">  
+          </div>
+      </div>
+    </div>
+        {% endfor %}
+</main>
+
+
+{% endblock %}
+

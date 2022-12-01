@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+
+<main role="main">
+ <div class="blog-post">
+        <br>
+        <h2 class="blog-post-title mb-4" style = "text-align:center">
+            {{ blog.title }}
+        </h2> 
+        <h2 class="blog-post-title mb-4" style = "text-align:center">
+           <img src = "{{ blog.image.url }}" height = "250" width = "200">
+           
+        </h2>
+        
+          <p class="text-center"> For More, visit: <a href = "{{ blog.link }}">@uppukonjamkammi</a> <br> {{ blog.body }}</p> 
+ </div>
+</main>
+
+{% endblock %}
+

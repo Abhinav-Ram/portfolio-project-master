@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<main role="main">
+
+ <div class="jumbotron p-4 p-md-5 text-white rounded bg-dark">
+ <div class = "row">  
+ <div class="col-md-6 px-0">
+      <h1 class="display-4 font-italic" style = "text-align:center">I'm Abhinav, and this is my place</h1>
+      <p class="lead my-3" style = "text-align:center">Stay home. Stay safe. Maintain social distancing. Wash your hands. Cover your face.</p>    
+</div>
+    <div class="col-auto d-none d-lg-block">
+       <img src = "{% static 'abhibaby.jpg' %}" height = "250" width = "325">
+    </div>
+ </div>
+</div>
+
+   <div class = "album py-5 bg-light">
+      <div class = "container">
+       <div class = "row">
+         {% for job in jobs.all%}
+        <div class="col-md-4">
+          <div class="card mb-4 shadow-sm">
+             <img class = card-img-top" src = "{{ job.image.url }}" width="400" height="535">
+          <div class="card-body">
+              <p class="card-text">{{ job.summary }}</p>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+
+</main>
+
+{% endblock %}
+
