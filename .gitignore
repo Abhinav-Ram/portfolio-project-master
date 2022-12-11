@@ -12,3 +12,11 @@ db.sqlite3
 db.sqlite3-journal
 /media
 /static
+.cache/*
+.config/*
+.upm/*
+.replit
+poetry.lock
+pyproject
+replit.nix
+replit_zip_error_log
